@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         radioGroupOperaciones = findViewById(R.id.radioGroupOperaciones);
         btnCalcular = findViewById(R.id.btnCalcular);
 
-
+        // Escuchar el clic del botón "Calcular"
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calcularResultado() {
-
+        // Obtener los valores de los EditText
         String strNum1 = num1.getText().toString();
         String strNum2 = num2.getText().toString();
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         double n2 = Double.parseDouble(strNum2);
         double result = 0;
 
-
+        // Obtener el RadioButton seleccionado
         int selectedId = radioGroupOperaciones.getCheckedRadioButtonId();
         RadioButton radioButton = findViewById(selectedId);
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         String operacion = radioButton.getText().toString();
 
-
+        // Realizar la operación seleccionada
         switch (operacion) {
             case "Suma":
                 result = n1 + n2;
@@ -103,6 +103,17 @@ public class MainActivity extends AppCompatActivity {
                     resultado.setText("Error: Factorial de número no entero");
                     return;
                 }
+                break;
+            case "Módulo (resto)":
+                if (n2 != 0) {
+                    result = n1 % n2;
+                } else {
+                    resultado.setText("Error: Módulo por cero");
+                    return;
+                }
+                break;
+            case "Mayor de 2 números":
+                result = Math.max(n1, n2);
                 break;
             default:
                 resultado.setText("Operación no válida");

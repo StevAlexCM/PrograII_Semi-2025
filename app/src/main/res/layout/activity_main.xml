@@ -24,7 +24,7 @@
 		android:inputType="numberDecimal"
 		android:padding="8dp" />
 
-
+	<
 	<RadioGroup
 		android:id="@+id/radioGroupOperaciones"
 		android:layout_width="match_parent"
@@ -79,6 +79,19 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:text="Factorial" />
+
+
+		<RadioButton
+			android:id="@+id/radioModulo"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Módulo (resto)" />
+
+		<RadioButton
+			android:id="@+id/radioMayor"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Mayor de 2 números" />
 	</RadioGroup>
 
 
